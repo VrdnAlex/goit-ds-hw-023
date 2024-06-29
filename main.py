@@ -42,8 +42,6 @@ def update_age_cat(client, cat_name, new_age_cat):
         cats_collection = db.cats
         cat = cats_collection.update_one({"name": cat_name}, {"$set": {"age": new_age_cat}})
 
-        if cat:
-            print(f"Name: {cat['name']}, {cat['age']}")
         else:
             print(f"Cat with name '{cat_name}' not found.")
     except Exception as e:
